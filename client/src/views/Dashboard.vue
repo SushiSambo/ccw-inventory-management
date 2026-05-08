@@ -13,6 +13,11 @@
         <div class="kpi-grid">
           <div class="kpi-card">
             <div class="kpi-header">
+              <div class="kpi-icon indigo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#d97757">
+                  <path d="M3 3a1 1 0 000 2h11a1 1 0 100-2H3zM3 7a1 1 0 000 2h7a1 1 0 100-2H3zM3 11a1 1 0 100 2h4a1 1 0 100-2H3zM15 8a1 1 0 00-1 1v4.586l-1.293-1.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L16 13.586V9a1 1 0 00-1-1z" />
+                </svg>
+              </div>
               <span class="kpi-label">{{ t('dashboard.kpi.inventoryTurnover') }}</span>
             </div>
             <div class="kpi-value">4.2</div>
@@ -24,6 +29,11 @@
 
           <div class="kpi-card">
             <div class="kpi-header">
+              <div class="kpi-icon green">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#059669">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
               <span class="kpi-label">{{ t('dashboard.kpi.ordersFulfilled') }}</span>
             </div>
             <div class="kpi-value">{{ ordersData.fulfilled }}</div>
@@ -35,6 +45,11 @@
 
           <div class="kpi-card">
             <div class="kpi-header">
+              <div class="kpi-icon violet">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#d97757">
+                  <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
+                </svg>
+              </div>
               <span class="kpi-label">{{ t('dashboard.kpi.orderFillRate') }}</span>
             </div>
             <div class="kpi-value">{{ fillRate }}%</div>
@@ -46,6 +61,12 @@
 
           <div class="kpi-card">
             <div class="kpi-header">
+              <div class="kpi-icon amber">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#d97706">
+                  <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z" />
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd" />
+                </svg>
+              </div>
               <span class="kpi-label">{{ t(selectedPeriod === 'all' ? 'dashboard.kpi.revenueYTD' : 'dashboard.kpi.revenueMTD') }}</span>
             </div>
             <div class="kpi-value">{{ formatCurrency(Math.round(summary.total_orders_value), selectedCurrency) }}</div>
@@ -57,6 +78,11 @@
 
           <div class="kpi-card">
             <div class="kpi-header">
+              <div class="kpi-icon red">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#dc2626">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+                </svg>
+              </div>
               <span class="kpi-label">{{ t('dashboard.kpi.avgProcessingTime') }}</span>
             </div>
             <div class="kpi-value">2.8</div>
@@ -408,8 +434,8 @@ export default {
       // Filter inventory items to only include those with orders in the selected period
       const categoryMap = {}
 
-      // Use a single neutral slate/gray color for all categories
-      const singleColor = '#64748b' // Neutral slate gray color
+      // Use a single warm coral color for all categories
+      const singleColor = '#d97757'
 
       // Get SKUs from orders in the filtered time period
       const orderedSkus = new Set()
@@ -744,11 +770,11 @@ export default {
 }
 
 .section-title {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #475569;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #6b5c4e;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   margin-bottom: 1rem;
 }
 
@@ -759,55 +785,100 @@ export default {
 }
 
 .kpi-card {
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 10px;
-  padding: 1rem;
+  background: #fffdf9;
+  border: 1px solid #e8e0d5;
+  border-radius: 14px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease;
+}
+
+.kpi-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .kpi-header {
-  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.kpi-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.kpi-icon.indigo {
+  background: #fdf3ee;
+}
+
+.kpi-icon.green {
+  background: #d1fae5;
+}
+
+.kpi-icon.amber {
+  background: #fef3c7;
+}
+
+.kpi-icon.red {
+  background: #fee2e2;
+}
+
+.kpi-icon.violet {
+  background: #fdf3ee;
+}
+
+.kpi-icon svg {
+  width: 16px;
+  height: 16px;
 }
 
 .kpi-label {
   font-size: 0.813rem;
   font-weight: 600;
-  color: #64748b;
+  color: #6b5c4e;
   text-transform: uppercase;
-  letter-spacing: 0.025em;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
 }
 
 .kpi-value {
   font-size: 2rem;
   font-weight: 700;
-  color: #0f172a;
+  color: #1a1309;
   margin-bottom: 0.5rem;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.04em;
 }
 
 .kpi-goal {
   font-size: 0.813rem;
-  color: #64748b;
+  color: #94a3b8;
   margin-bottom: 0.75rem;
 }
 
 .kpi-progress-bar {
   width: 100%;
   height: 6px;
-  background: #f1f5f9;
-  border-radius: 3px;
+  background: #e8e0d5;
+  border-radius: 9999px;
   overflow: hidden;
 }
 
 .kpi-progress {
   height: 100%;
-  background: #3b82f6;
-  border-radius: 3px;
+  background: #d97757;
+  border-radius: 9999px;
   transition: width 0.6s ease;
 }
 
 .kpi-progress.success {
-  background: #10b981;
+  background: #d97757;
 }
 
 .charts-grid {
@@ -823,6 +894,7 @@ export default {
 
 .chart-content {
   padding: 1rem;
+  padding-top: 0;
 }
 
 .donut-chart {
@@ -978,18 +1050,24 @@ export default {
 .h-bar-container {
   flex: 1;
   height: 32px;
-  background: #f8fafc;
-  border-radius: 6px;
+  background: #e8e0d5;
+  border-radius: 9999px;
   overflow: hidden;
 }
 
 .h-bar {
   height: 100%;
+  background: #d97757 !important;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   padding-right: 0.75rem;
+  border-radius: 9999px;
   transition: width 0.6s ease;
+}
+
+.h-bar-item:nth-child(even) .h-bar {
+  background: #e8a887 !important;
 }
 
 .h-bar-value {
@@ -1044,21 +1122,21 @@ export default {
   width: 100%;
   max-width: 60px;
   min-height: 8px;
-  background: #3b82f6;
+  background: #d97757;
   border-radius: 6px 6px 0 0;
   transition: all 0.3s ease;
   cursor: pointer;
-  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 2px 4px rgba(217, 119, 87, 0.25);
 }
 
 .line-bar.empty-bar {
-  background: #e2e8f0;
+  background: #e8e0d5;
   box-shadow: none;
   min-height: 4px;
 }
 
 .line-bar:hover {
-  background: #2563eb;
+  background: #c2603e;
   transform: scaleY(1.05);
 }
 
@@ -1109,7 +1187,7 @@ export default {
 }
 
 .clickable-row:hover {
-  background: #eff6ff !important;
+  background: #fdf3ee !important;
 }
 
 /* Tasks Card Styles */
@@ -1248,14 +1326,14 @@ export default {
 }
 
 .po-button.create {
-  background: #3b82f6;
+  background: #d97757;
   color: white;
 }
 
 .po-button.create:hover {
-  background: #2563eb;
+  background: #c2603e;
   transform: translateY(-1px);
-  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 2px 4px rgba(217, 119, 87, 0.3);
 }
 
 .po-button.view {
