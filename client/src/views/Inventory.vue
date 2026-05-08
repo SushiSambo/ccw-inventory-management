@@ -238,20 +238,13 @@ export default {
   font-size: 0.875rem;
 }
 
-.card-header {
+/* Override card-header layout for the search box row */
+:deep(.card-header) {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
   padding: 1.25rem 1.5rem;
-  border-bottom: 1px solid #e2e8f0;
-}
-
-.card-title {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #0f172a;
-  margin: 0;
 }
 
 .search-box {
@@ -266,30 +259,30 @@ export default {
   left: 0.75rem;
   width: 18px;
   height: 18px;
-  color: #94a3b8;
+  color: #6b5c4e;
   pointer-events: none;
 }
 
 .search-input {
   width: 100%;
   padding: 0.5rem 2.5rem 0.5rem 2.5rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
+  border: 1px solid #e8e0d5;
+  border-radius: 10px;
   font-size: 0.875rem;
-  color: #0f172a;
-  background: #f8fafc;
+  color: #1a1309;
+  background: #faf7f2;
   transition: all 0.2s;
 }
 
 .search-input:focus {
   outline: none;
-  border-color: #3b82f6;
-  background: white;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  border-color: #d97757;
+  background: #fffdf9;
+  box-shadow: 0 0 0 3px rgba(217, 119, 87, 0.15);
 }
 
 .search-input::placeholder {
-  color: #94a3b8;
+  color: #6b5c4e;
 }
 
 .clear-search {
@@ -317,23 +310,12 @@ export default {
   height: 18px;
 }
 
-.loading,
-.error {
-  padding: 2rem;
-  text-align: center;
-  color: #64748b;
-}
-
-.error {
-  color: #ef4444;
-}
-
 .clickable-row {
   cursor: pointer;
   transition: background-color 0.15s ease;
 }
 
 .clickable-row:hover {
-  background: #eff6ff !important;
+  background: #fdf3ee !important;
 }
 </style>

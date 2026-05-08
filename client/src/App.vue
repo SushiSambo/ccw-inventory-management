@@ -3,6 +3,7 @@
     <header class="top-nav">
       <div class="nav-container">
         <div class="logo">
+          <span class="logo-mark"></span>
           <h1>{{ t('nav.companyName') }}</h1>
           <span class="subtitle">{{ t('nav.subtitle') }}</span>
         </div>
@@ -170,8 +171,8 @@ export default {
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  background: #f8fafc;
-  color: #1e293b;
+  background: #faf7f2;
+  color: #1a1309;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -182,96 +183,13 @@ body {
   min-height: 100vh;
 }
 
-.top-nav {
-  background: #ffffff;
-  border-bottom: 1px solid #e2e8f0;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.nav-container {
-  max-width: 1600px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  padding: 0 2rem;
-  height: 70px;
-}
-
-.nav-container > .nav-tabs {
-  margin-left: auto;
-  margin-right: 1rem;
-}
-
-.nav-container > .language-switcher {
-  margin-right: 1rem;
-}
-
-.logo {
-  display: flex;
-  align-items: baseline;
-  gap: 0.75rem;
-}
-
-.logo h1 {
-  font-size: 1.375rem;
-  font-weight: 700;
-  color: #0f172a;
-  letter-spacing: -0.025em;
-}
-
-.subtitle {
-  font-size: 0.813rem;
-  color: #64748b;
-  font-weight: 400;
-  padding-left: 0.75rem;
-  border-left: 1px solid #e2e8f0;
-}
-
-.nav-tabs {
-  display: flex;
-  gap: 0.25rem;
-}
-
-.nav-tabs a {
-  padding: 0.625rem 1.25rem;
-  color: #64748b;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.938rem;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-  position: relative;
-}
-
-.nav-tabs a:hover {
-  color: #0f172a;
-  background: #f1f5f9;
-}
-
-.nav-tabs a.active {
-  color: #2563eb;
-  background: #eff6ff;
-}
-
-.nav-tabs a.active::after {
-  content: '';
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: #2563eb;
-}
-
 .main-content {
   flex: 1;
   max-width: 1600px;
   width: 100%;
   margin: 0 auto;
   padding: 1.5rem 2rem;
+  background: #faf7f2;
 }
 
 .page-header {
@@ -281,15 +199,17 @@ body {
 .page-header h2 {
   font-size: 1.875rem;
   font-weight: 700;
-  color: #0f172a;
+  color: #1a1309;
   margin-bottom: 0.375rem;
   letter-spacing: -0.025em;
 }
 
 .page-header p {
-  color: #64748b;
+  color: #6b5c4e;
   font-size: 0.938rem;
 }
+
+/* ── Stats ─────────────────────────────────────────────────────────────── */
 
 .stats-grid {
   display: grid;
@@ -299,31 +219,51 @@ body {
 }
 
 .stat-card {
-  background: white;
-  padding: 1.25rem;
-  border-radius: 10px;
-  border: 1px solid #e2e8f0;
+  background: #fffdf9;
+  padding: 1.5rem 1.5rem 1.5rem 1.25rem;
+  border-radius: 14px;
+  border: 1px solid #e8e0d5;
+  border-left-width: 3px;
+  border-left-color: #e8e0d5;
+  box-shadow: 0 1px 4px rgba(26, 19, 9, 0.07);
   transition: all 0.2s ease;
 }
 
 .stat-card:hover {
-  border-color: #cbd5e1;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 6px 20px rgba(26, 19, 9, 0.1);
+  border-color: #d4c9bb;
+  border-left-color: inherit;
+}
+
+.stat-card.warning {
+  border-left-color: #f59e0b;
+}
+
+.stat-card.success {
+  border-left-color: #10b981;
+}
+
+.stat-card.danger {
+  border-left-color: #ef4444;
+}
+
+.stat-card.info {
+  border-left-color: #d97757;
 }
 
 .stat-label {
-  color: #64748b;
-  font-size: 0.875rem;
+  color: #6b5c4e;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.05em;
   margin-bottom: 0.625rem;
 }
 
 .stat-value {
   font-size: 2.25rem;
   font-weight: 700;
-  color: #0f172a;
+  color: #1a1309;
   letter-spacing: -0.025em;
 }
 
@@ -340,15 +280,24 @@ body {
 }
 
 .stat-card.info .stat-value {
-  color: #2563eb;
+  color: #d97757;
 }
 
+/* ── Cards ──────────────────────────────────────────────────────────────── */
+
 .card {
-  background: white;
-  border-radius: 10px;
+  background: #fffdf9;
+  border-radius: 14px;
   padding: 1.25rem;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #e8e0d5;
+  box-shadow: 0 1px 4px rgba(26, 19, 9, 0.07);
   margin-bottom: 1.25rem;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  border-color: #d4c9bb;
+  box-shadow: 0 6px 20px rgba(26, 19, 9, 0.1);
 }
 
 .card-header {
@@ -357,15 +306,17 @@ body {
   align-items: center;
   margin-bottom: 1rem;
   padding-bottom: 0.875rem;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e8e0d5;
 }
 
 .card-title {
   font-size: 1.125rem;
   font-weight: 700;
-  color: #0f172a;
+  color: #1a1309;
   letter-spacing: -0.025em;
 }
+
+/* ── Tables ─────────────────────────────────────────────────────────────── */
 
 .table-container {
   overflow-x: auto;
@@ -377,25 +328,25 @@ table {
 }
 
 thead {
-  background: #f8fafc;
-  border-top: 1px solid #e2e8f0;
-  border-bottom: 1px solid #e2e8f0;
+  background: #faf7f2;
+  border-top: 1px solid #e8e0d5;
+  border-bottom: 1px solid #e8e0d5;
 }
 
 th {
   text-align: left;
-  padding: 0.5rem 0.75rem;
+  padding: 0.625rem 0.75rem;
   font-weight: 600;
-  color: #475569;
-  font-size: 0.75rem;
+  color: #6b5c4e;
+  font-size: 0.688rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
 }
 
 td {
   padding: 0.5rem 0.75rem;
-  border-top: 1px solid #f1f5f9;
-  color: #334155;
+  border-top: 1px solid #e8e0d5;
+  color: #1a1309;
   font-size: 0.875rem;
 }
 
@@ -404,83 +355,183 @@ tbody tr {
 }
 
 tbody tr:hover {
-  background: #f8fafc;
+  background: #faf7f2;
 }
+
+/* ── Badges ─────────────────────────────────────────────────────────────── */
 
 .badge {
   display: inline-block;
-  padding: 0.313rem 0.75rem;
-  border-radius: 6px;
-  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.688rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.025em;
+  letter-spacing: 0.04em;
 }
 
 .badge.success {
-  background: #d1fae5;
-  color: #065f46;
+  background: #ecfdf5;
+  color: #166534;
 }
 
 .badge.warning {
-  background: #fed7aa;
+  background: #fef9ec;
   color: #92400e;
 }
 
 .badge.danger {
-  background: #fecaca;
+  background: #fef2f2;
   color: #991b1b;
 }
 
 .badge.info {
-  background: #dbeafe;
-  color: #1e40af;
+  background: #fdf3ee;
+  color: #9a3412;
 }
 
 .badge.increasing {
-  background: #d1fae5;
-  color: #065f46;
+  background: #fdf3ee;
+  color: #9a3412;
 }
 
 .badge.decreasing {
-  background: #fecaca;
+  background: #fef2f2;
   color: #991b1b;
 }
 
 .badge.stable {
-  background: #e0e7ff;
-  color: #3730a3;
+  background: #f0fdf4;
+  color: #166534;
 }
 
 .badge.high {
-  background: #fecaca;
+  background: #fef2f2;
   color: #991b1b;
 }
 
 .badge.medium {
-  background: #fed7aa;
+  background: #fef9ec;
   color: #92400e;
 }
 
 .badge.low {
-  background: #dbeafe;
-  color: #1e40af;
+  background: #f0fdf4;
+  color: #166534;
 }
+
+/* ── Loading / Error ────────────────────────────────────────────────────── */
 
 .loading {
   text-align: center;
   padding: 3rem;
-  color: #64748b;
+  color: #6b5c4e;
   font-size: 0.938rem;
 }
 
 .error {
   background: #fef2f2;
   border: 1px solid #fecaca;
-  color: #991b1b;
+  color: #9a3412;
   padding: 1rem;
   border-radius: 8px;
   margin: 1rem 0;
   font-size: 0.938rem;
+}
+</style>
+
+<style scoped>
+/* ── Top Nav ────────────────────────────────────────────────────────────── */
+
+.top-nav {
+  background: #fffdf9;
+  border-bottom: 1px solid #e8e0d5;
+  box-shadow: 0 1px 4px rgba(26, 19, 9, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-container {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  height: 100%;
+}
+
+.nav-container > .nav-tabs {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.nav-container > .language-switcher {
+  margin-right: 1rem;
+}
+
+/* ── Logo ───────────────────────────────────────────────────────────────── */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.logo-mark {
+  display: block;
+  width: 8px;
+  height: 28px;
+  background: #d97757;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.logo h1 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1309;
+  letter-spacing: -0.03em;
+  margin-right: 0.125rem;
+}
+
+.subtitle {
+  font-size: 0.813rem;
+  color: #6b5c4e;
+  font-weight: 400;
+  padding-left: 0.75rem;
+  border-left: 1px solid #e8e0d5;
+}
+
+/* ── Nav Tabs ───────────────────────────────────────────────────────────── */
+
+.nav-tabs {
+  display: flex;
+  gap: 0.125rem;
+}
+
+.nav-tabs a {
+  padding: 0.5rem 1rem;
+  color: #6b5c4e;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.875rem;
+  border-radius: 9999px;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.nav-tabs a:hover {
+  color: #1a1309;
+  background: #f5f0e8;
+}
+
+.nav-tabs a.active {
+  color: #d97757;
+  background: #fdf3ee;
 }
 </style>

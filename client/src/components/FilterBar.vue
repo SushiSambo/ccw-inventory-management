@@ -102,11 +102,12 @@ export default {
 
 <style scoped>
 .filters-bar {
-  background: #f8fafc;
-  border-bottom: 1px solid #e2e8f0;
-  padding: 0.75rem 0;
+  background: #fffdf9;
+  border-bottom: 1px solid #e8e0d5;
+  box-shadow: 0 1px 3px rgba(26, 19, 9, 0.05);
+  padding: 0.625rem 0;
   position: sticky;
-  top: 70px;
+  top: 64px;
   z-index: 90;
 }
 
@@ -122,7 +123,7 @@ export default {
 .filters-grid {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.25rem;
   flex: 1;
 }
 
@@ -135,31 +136,33 @@ export default {
 .filter-group label {
   font-size: 0.75rem;
   font-weight: 600;
-  color: #64748b;
+  color: #6b5c4e;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   white-space: nowrap;
 }
 
 .filter-select {
-  padding: 0.4rem 0.75rem;
-  border: 1px solid #cbd5e1;
-  border-radius: 6px;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid #e8e0d5;
+  border-radius: 10px;
   font-size: 0.813rem;
-  color: #0f172a;
-  background: white;
+  color: #1a1309;
+  background: #faf7f2;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
   font-weight: 500;
   min-width: 140px;
 }
 
 .filter-select:hover {
-  border-color: #94a3b8;
+  border-color: #d4c9bb;
 }
 
 .filter-select:focus {
   outline: none;
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  border-color: #d97757;
+  box-shadow: 0 0 0 3px rgba(217, 119, 87, 0.15);
 }
 
 .reset-filters-btn {
@@ -167,19 +170,19 @@ export default {
   align-items: center;
   justify-content: center;
   padding: 0.4rem;
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 6px;
-  color: #64748b;
+  background: #fffdf9;
+  border: 1px solid #e8e0d5;
+  border-radius: 8px;
+  color: #6b5c4e;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.15s ease;
   flex-shrink: 0;
 }
 
 .reset-filters-btn:hover:not(:disabled) {
-  background: #f8fafc;
-  border-color: #cbd5e1;
-  color: #0f172a;
+  background: #fdf3ee;
+  border-color: #f4c4a8;
+  color: #d97757;
 }
 
 .reset-filters-btn:disabled {
@@ -188,7 +191,7 @@ export default {
 }
 
 .reset-filters-btn svg {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
 }
 </style>

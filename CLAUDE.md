@@ -72,3 +72,4 @@ npm install && npm run dev
 - Status: green/blue/yellow/red
 - Charts: Custom SVG, CSS Grid for layouts
 - No emojis in UI
+- **Styling: Prefer Tailwind CSS utility classes over custom CSS**
